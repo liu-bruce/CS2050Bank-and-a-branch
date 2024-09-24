@@ -1,12 +1,45 @@
-
-
 package account_methods;
-abstract public static class account_core
+
+abstract person_information
 {
+  private int socail_security_number = 0;
+  private String name_of_owner = "";
+  private String address = "";
+}
+abstract public static class account_core extends person_information
+{
+  private int bank_account_number = 0 ;
+  private double account_balance = 0;
+  private double interest_rate = 0;
+
 
 }
 public static class checking_account extends account_core
 {
+  public static void set_account_number()
+  {
+
+  }
+  public static void set account_balance()
+  {
+
+  }
+  public static void set_interest_rate()
+  {
+
+  }
+  public static int get_account_number()
+  {
+
+  }
+  public static double get_account_balance()
+  {
+
+  }
+  public static double get_interest_rate()
+  {
+
+  }
 
 }
 public static class savings_account extends account_core
