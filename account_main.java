@@ -1,4 +1,4 @@
-import shorts.*;
+
 
 public class account_main
 {
