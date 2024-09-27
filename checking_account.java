@@ -1,4 +1,5 @@
-public class checking_account extends account_core
+// child 4
+public class checking_account extends home_information
 {
 
 
