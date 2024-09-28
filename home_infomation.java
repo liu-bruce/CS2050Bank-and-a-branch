@@ -1,4 +1,4 @@
-//child 3
+//child 2
 public class home_information extends personal_infomation
 {
 

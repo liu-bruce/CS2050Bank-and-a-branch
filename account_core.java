@@ -1,7 +1,6 @@
 
 // parent
 
-
 public class account_core
 {
   // bank infomation
@@ -9,17 +8,21 @@ public class account_core
   private int     account_number = 0;
   private double  account_balance = 0;
   private double  interest_rate = 0;
+  private int     interest_payment_frequency_in_months = 0;
   private String  account_creation_month = "";
   private int     account_creation_day = 0;
   private int     account_creation_year = 0;
-public account_core(int bank_account_number_init , int account_number_init ,double account_balance_init, double interest_rate_init, String account_creation_month_init, int account_creation_day_init, int account_creation_year_init)
+////calculated values
+  private double  interest_payment_ammount = 0;
+public account_core(int bank_account_number_init , int account_number_init ,double account_balance_init, double interest_rate_init,String account_creation_month_init, int account_creation_day_init, int account_creation_year_init)
 {
   set_bank_account_number(bank_account_number_init);
   set_account_number(account_number_init);
   set_account_balance(account_balance_init);
   set_interest_rate(interest_rate_init);
-
-
+  set_account_creation_month(account_creation_month_init);
+  set_account_creation_day(account_creation_day_init);
+  set_account_creation_year(account_creation_year_init);
 }
 /////////////////////////////////////////////////////
 public void set_bank_account_number(int bank_account_number_input)
@@ -59,12 +62,50 @@ public int get_bank_account_number()
   {
     return interest_rate ;
   }
+  //////////////////////////////////////////////
+  public void set_interest_payment_frequency(int frequency_of_payment_in_months)
+  {
+    interest_payment_frequency_in_months = frequency_of_payment_in_months;
+  }
+  public void get_interest_payment_frequency()
+  {
+    return interest_payment_frequency_in_months;
+  }
+
+
   /////////////////////////////////////////////////////////////////////
-  public void set_account_creation_month()
-  {}
+  public void set_account_creation_month(String month_of_account_creation)
+  {
+    account_creation_month = month_of_account_creation;
+  }
+  public String get_account_creation_month()
+  {
+    return account_creation_month
+  }
 /////////////////////////////////////////////////////////
-
-
+  public void set_account_creation_day(int day_of_account_creation  )
+  {
+  account_creation_day = day_of_account_creation;
+  }
+  public int get_account_creation_day()
+  {
+    return account_creation_day;
+  }
+  ////////////////////////////////////////////////////
+  public void set_account_creation_year(int year_of_account_creation)
+  {
+    account_creation_year = year_of_account_creation;
+  }
+  public int get_account_creation_year()
+  {
+    return account_creation_year;
+  }
+  ////////////////////////////////calculations
+  public void calculate_interest_payment()
+  {
+    interest_payment_ammount = account_balance * interest_rate/100;
+  }
+  // make to sting
 
 
 

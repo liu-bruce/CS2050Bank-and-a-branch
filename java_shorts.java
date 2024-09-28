@@ -19,8 +19,13 @@ public static int random_number_generator_range_exclude_data_base()
 }
 public static void hello_world()
 {
-
   command_line_output("hello_world \n\n");
+}
+
+//file input prep
+public static void from_file_data_intake(String file_name)
+{
+
 }
 
 }
