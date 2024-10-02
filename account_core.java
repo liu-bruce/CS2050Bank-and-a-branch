@@ -4,6 +4,7 @@
 public class account_core
 {
   // bank infomation
+  private String  bank_name = "";
   private int     bank_account_number = 0 ;
   private int     account_number = 0;
   private double  account_balance = 0;
@@ -14,15 +15,29 @@ public class account_core
   private int     account_creation_year = 0;
 ////calculated values
   private double  interest_payment_ammount = 0;
-public account_core(int bank_account_number_init , int account_number_init ,double account_balance_init, double interest_rate_init,String account_creation_month_init, int account_creation_day_init, int account_creation_year_init)
+
+
+public account_core(string bank_name_init ,int bank_account_number_init , int account_number_init ,double account_balance_init, double interest_rate_init,String account_creation_month_init, int account_creation_day_init, int account_creation_year_init)
 {
+  set_bank_name(bank_name_init);
   set_bank_account_number(bank_account_number_init);
   set_account_number(account_number_init);
   set_account_balance(account_balance_init);
   set_interest_rate(interest_rate_init);
+  calculate_interest_payment();
   set_account_creation_month(account_creation_month_init);
   set_account_creation_day(account_creation_day_init);
   set_account_creation_year(account_creation_year_init);
+}
+//////////////////////////////////////////////////////
+public void set_bank_name(String bank_name_input)
+{
+  bank_name = bank_name_input;
+
+}
+public String get_bank_name()
+{
+  return bank_name;
 }
 /////////////////////////////////////////////////////
 public void set_bank_account_number(int bank_account_number_input)
@@ -105,7 +120,21 @@ public int get_bank_account_number()
   {
     interest_payment_ammount = account_balance * interest_rate/100;
   }
-  // make to sting
+
+  public String tostring()
+  {
+    String output_string = "";
+
+    output_string = concat(output_string, "Bank name:", bank_name,"\n" );
+    output_string = concat(output_string, "Bank account number:", bank_account_number,"\n");
+    output_string = concat(output_string, "Account number:",account_number,"\n")
+    output_string = concat(output_string, "Account balance:",account_balance,"\n");
+    output_string = concat(output_string, "Intrest rate:", interest_rate, "%\n");
+    output_string = concat(output_string, "Interest payment frequency in months:", interest_payment_frequency_in_months,"\n" );
+    output_string = concat(output_string, "Interest payment ammount:", interest_payment_ammount,"\n");
+    output_string = concat(output_string, "Date of account creation",account_creation_month, " ", account_creation_day, ",",account_creation_year "\n\n\n");
+    return output_string;
+  }
 
 
 
