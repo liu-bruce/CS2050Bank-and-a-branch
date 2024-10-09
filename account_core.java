@@ -4,13 +4,13 @@
 public class account_core
 {
   // bank infomation
-  private String  bank_name = "";
+  private String  bank_name = "null";
   private int     bank_account_number = 0 ;
   private int     account_number = 0;
   private double  account_balance = 0;
   private double  interest_rate = 0;
   private int     interest_payment_frequency_in_months = 0;
-  private String  account_creation_month = "";
+  private String  account_creation_month = "null";
   private int     account_creation_day = 0;
   private int     account_creation_year = 0;
 ////calculated values
@@ -120,19 +120,19 @@ public int get_bank_account_number()
   {
     interest_payment_ammount = account_balance * interest_rate/100;
   }
-
-  public String tostring()
+@Overwrite
+  public String toString()
   {
     String output_string = "";
 
-    output_string = concat(output_string, "Bank name:", bank_name,"\n" );
-    output_string = concat(output_string, "Bank account number:", bank_account_number,"\n");
-    output_string = concat(output_string, "Account number:",account_number,"\n")
-    output_string = concat(output_string, "Account balance:",account_balance,"\n");
-    output_string = concat(output_string, "Intrest rate:", interest_rate, "%\n");
-    output_string = concat(output_string, "Interest payment frequency in months:", interest_payment_frequency_in_months,"\n" );
-    output_string = concat(output_string, "Interest payment ammount:", interest_payment_ammount,"\n");
-    output_string = concat(output_string, "Date of account creation",account_creation_month, " ", account_creation_day, ",",account_creation_year "\n\n\n");
+    concat(output_string, "Bank name:", get_bank_name(),"\n" );
+    concat(output_string, "Bank account number:", get_bank_account_number(),"\n");
+    concat(output_string, "Account number:",get_account_number(),"\n")
+    concat(output_string, "Account balance:",get_account_balance(),"\n");
+    concat(output_string, "Intrest rate:", get_interest_rate(), "%\n");
+    concat(output_string, "Interest payment frequency in months:", get_interest_payment_frequency_in_months(),"\n" );
+    concat(output_string, "Interest payment ammount:", get_interest_payment_ammount(),"\n");
+    concat(output_string, "Date of account creation",get_account_creation_month(), " ", get_account_creation_day(), ",",get_account_creation_year() "\n\n\n");
     return output_string;
   }
 
