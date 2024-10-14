@@ -21,6 +21,20 @@ set_birth_year(birth_year_init)
 }
 //////////////setter getters
 /////////////////////////////////////////////////////////////////////////
+public void set account_core_info(String bank_name_init ,int bank_account_number_init , int account_number_init ,double account_balance_init, double interest_rate_init, int interest_payment_frequency_in_months_init,  String account_creation_month_init, int account_creation_day_init, int account_creation_year_init)
+  {
+    super.set_bank_name(bank_name_init);
+    super.set_bank_account_number(bank_account_number_init);
+    super.set_account_number(account_number_init);
+    super.set_account_balance(account_balance_init);
+    super.set_interest_rate(interest_rate_init);
+    super.calculate_interest_payment();
+    super.set_interest_payment_frequency(interest_payment_frequency_in_months_init);
+    super.set_account_creation_month(account_creation_month_init);
+    super.set_account_creation_day(account_creation_day_init);
+    super.set_account_creation_year(account_creation_year_init);
+  }
+}
 public void set_social_secuity_number(int social_security_number_input)
 {
   social_security_number = social_security_number_input;
@@ -79,8 +93,11 @@ public int get_birth_year()
 public String toString()
 {
   String personal_infomation_output = "";
+  personal_infomation_output = super.toString();
+  personal_infomation_output = personal_infomation_output + "social security number: " + get_social_security_number() + "\n";
 
-  concat(personal_infomation_output, "social security number:", get_social_security_number(),"\n");
+
+
   concat(personal_infomation_output,"owner:", get_name_of_owner(),"\n" );
   concat(personal_infomation_output, "phone#:", get_phone_number(),"\n" );
   concat(personal_infomation_output,"date of birth information", get_birth_month()," ", get_birth_day(), ",",get_birth_year(), "\n\n\n");

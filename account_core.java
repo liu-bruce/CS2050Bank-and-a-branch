@@ -1,4 +1,4 @@
-
+//import java.lang.String;
 // parent
 
 public class account_core
@@ -17,7 +17,7 @@ public class account_core
   private double  interest_payment_ammount = 0;
 
 
-public account_core(string bank_name_init ,int bank_account_number_init , int account_number_init ,double account_balance_init, double interest_rate_init,String account_creation_month_init, int account_creation_day_init, int account_creation_year_init)
+public account_core(String bank_name_init ,int bank_account_number_init , int account_number_init ,double account_balance_init, double interest_rate_init, int interest_payment_frequency_in_months_init,  String account_creation_month_init, int account_creation_day_init, int account_creation_year_init)
 {
   set_bank_name(bank_name_init);
   set_bank_account_number(bank_account_number_init);
@@ -25,6 +25,7 @@ public account_core(string bank_name_init ,int bank_account_number_init , int ac
   set_account_balance(account_balance_init);
   set_interest_rate(interest_rate_init);
   calculate_interest_payment();
+  set_interest_payment_frequency(interest_payment_frequency_in_months_init);
   set_account_creation_month(account_creation_month_init);
   set_account_creation_day(account_creation_day_init);
   set_account_creation_year(account_creation_year_init);
@@ -82,7 +83,7 @@ public int get_bank_account_number()
   {
     interest_payment_frequency_in_months = frequency_of_payment_in_months;
   }
-  public void get_interest_payment_frequency()
+  public int get_interest_payment_frequency()
   {
     return interest_payment_frequency_in_months;
   }
@@ -95,7 +96,7 @@ public int get_bank_account_number()
   }
   public String get_account_creation_month()
   {
-    return account_creation_month
+    return account_creation_month;
   }
 /////////////////////////////////////////////////////////
   public void set_account_creation_day(int day_of_account_creation  )
@@ -120,19 +121,25 @@ public int get_bank_account_number()
   {
     interest_payment_ammount = account_balance * interest_rate/100;
   }
-@Overwrite
+  public double get_interest_payment_ammount()
+  {
+    return interest_payment_ammount;
+  }
+
+//@Overwrite
   public String toString()
   {
     String output_string = "";
 
-    concat(output_string, "Bank name:", get_bank_name(),"\n" );
-    concat(output_string, "Bank account number:", get_bank_account_number(),"\n");
-    concat(output_string, "Account number:",get_account_number(),"\n")
-    concat(output_string, "Account balance:",get_account_balance(),"\n");
-    concat(output_string, "Intrest rate:", get_interest_rate(), "%\n");
-    concat(output_string, "Interest payment frequency in months:", get_interest_payment_frequency_in_months(),"\n" );
-    concat(output_string, "Interest payment ammount:", get_interest_payment_ammount(),"\n");
-    concat(output_string, "Date of account creation",get_account_creation_month(), " ", get_account_creation_day(), ",",get_account_creation_year() "\n\n\n");
+    output_string = output_string + "Bank name: " + get_bank_name() + "\n";
+    output_string = output_string + "Bank account number: " + get_bank_account_number() + "\n";
+    output_string = output_string + "Account number: " + get_account_number() + "\n";
+    output_string = output_string + "Account balance: " + get_account_balance() + "\n";
+    output_string = output_string + "Interest rate: " + get_interest_rate() + "\n";
+    output_string = output_string + "Intrest payment: " + get_interest_payment_ammount() + "\n";
+    output_string = output_string + "Intrest payment frequency in months: " + get_interest_payment_frequency()+ "\n";
+    output_string = output_string + "Date of account creation: " + get_account_creation_month() + "/" + get_account_creation_day() + "/" + get_account_creation_year();
+
     return output_string;
   }
 
