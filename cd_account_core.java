@@ -6,8 +6,14 @@ public class cd_account_core extends savings_account
   private int    maturty_date_year = 0;
 public cd_account_core()
 {
+  super();
 
 }
 
+public String toString()
+{
+  super.toString();
+
+};
 
 }

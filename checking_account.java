@@ -8,7 +8,14 @@ public class checking_account extends home_information
 
   public checking_account()
   {
-
+    super();
   }
+@Overwrite
+  public string toString()
+{
+  super.toString();
+  return;
+}
+  ;
 
 }
