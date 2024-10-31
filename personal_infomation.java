@@ -1,4 +1,5 @@
 // child 1
+// extends to home home_information
 public class personal_infomation extends account_core
 {
 
@@ -14,9 +15,17 @@ public personal_infomation()
 
 }
 
-///parent setter//
+///////bulk setters//////
+public bulk_setter_person_id_info()
+{
 
-//////////////////////
+}
+public bulk_setter_Date_of_Birth()
+{
+  
+}
+
+//////setters and getters////////
 public void set_social_secuity_number(String social_security_number_input)
 {
   social_security_number = social_security_number_input;
@@ -80,7 +89,7 @@ public String toString()
   personal_infomation_output = personal_infomation_output + "social security number: " + get_social_security_number() + "\n";
   personal_infomation_output = personal_infomation_output + "account owner : " + get_name_of_owner() + "\n";
   personal_infomation_output = personal_infomation_output + "Phone number : " + get_phone_number() + "\n";
-  personal_infomation_output = personal_infomation_output + "date of birth of owner : " + get_birth_month() + "/"+ get_birth_day() + "/" + get_birth_year() + "/";
+  personal_infomation_output = personal_infomation_output + "date of birth of owner : " + get_birth_month() + "/"+ get_birth_day() + "/" + get_birth_year() + "\n";
 
   return personal_infomation_output;
 }

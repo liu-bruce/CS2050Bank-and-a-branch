@@ -1,5 +1,6 @@
 //import java.lang.String;
 // parent
+// extends to personal information
 
 public class account_core
 {
@@ -7,9 +8,11 @@ public class account_core
   private String  bank_name = "null";
   private int     bank_account_number = 0 ;
   private int     account_number = 0;
+
   private double  account_balance = 0;
   private double  interest_rate = 0;
   private int     interest_payment_frequency_in_months = 0;
+
   private String  account_creation_month = "null";
   private int     account_creation_day = 0;
   private int     account_creation_year = 0;
@@ -20,7 +23,26 @@ public class account_core
 public account_core()
 {
 }
-//////////////////////////////////////////////////////
+/////bulk setters/////////////////
+public bulk_setter_bank_info(String bank_name_bulk, int bank_account_number_bulk,int account_number_bulk )
+{
+  set_bank_name(bank_name_bulk);
+  set_bank_account_number(bank_account_number);
+  set_account_number(account_number_bulk);
+}
+public bulk_setter_balance_info(double account_balance_bulk , double interest_rate_bulk, int interest_payment_frequency_in_months_bulk )
+{
+  set_account_balance(account_balance_bulk);
+  set_interest_rate(interest_rate_bulk);
+  set_interest_payment_frequency(interest_payment_frequency_in_months_bulk);
+}
+public bulk_setter_set_account_date(String account_creation_month_bulk , int account_creation_day_bulk, int account_creation_year_bulk)
+{
+  set_account_creation_month(account_creation_month_bulk);
+  set_account_creation_day(account_creation_day_bulk);
+  set_account_creation_year(account_creation_year_bulk);
+}
+//////////////////setter and getters ////////////////////////////////////
 public void set_bank_name(String bank_name_input)
 {
   bank_name = bank_name_input;

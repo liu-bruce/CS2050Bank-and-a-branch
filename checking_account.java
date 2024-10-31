@@ -10,7 +10,7 @@ public class checking_account extends home_information
   //////////////////////////////////seters  and getters
 
 
-  public string toString()
+  public String toString()
 {
   String output_string = super.toString();
   return output_string;
